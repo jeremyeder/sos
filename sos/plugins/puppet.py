@@ -15,6 +15,7 @@
 from sos.plugins import Plugin, RedHatPlugin, DebianPlugin, UbuntuPlugin
 from glob import glob
 
+
 class Puppet(Plugin, RedHatPlugin, DebianPlugin, UbuntuPlugin):
     """Puppet service
     """
@@ -29,7 +30,6 @@ class Puppet(Plugin, RedHatPlugin, DebianPlugin, UbuntuPlugin):
             "/etc/puppet/manifests/*",
             "/var/log/puppet/*.log",
         ])
-
 
     def postproc(self):
         for device_conf in glob("/etc/puppet/device.conf*"):
